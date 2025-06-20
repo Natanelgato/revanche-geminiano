@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>REVANCHE DO GEMINIANO</title>
+    <style>
+        body {
+            background-color: yellow;
+            color: black;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+        .team {
+            display: inline-block;
+            width: 300px;
+            margin: 20px;
+            padding: 20px;
+            border: 3px solid black;
+            border-radius: 10px;
+            background-color: white;
+        }
+        .score {
+            font-size: 48px;
+            margin: 20px 0;
+        }
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>REVANCHE DO GEMINIANO</h1>
+
+    <div class="team">
+        <h2>Time Geminiano ♊</h2>
+        <div class="score" id="scoreGeminiano">0</div>
+        <button onclick="addPoint('Geminiano')">+1 ponto</button>
+        <button onclick="removePoint('Geminiano')">-1 ponto</button>
+    </div>
+
+    <div class="team">
+        <h2>Time Ariano ♈</h2>
+        <div class="score" id="scoreAriano">0</div>
+        <button onclick="addPoint('Ariano')">+1 ponto</button>
+        <button onclick="removePoint('Ariano')">-1 ponto</button>
+    </div>
+
+    <script>
+        let scoreGeminiano = 0;
+        let scoreAriano = 0;
+
+        function addPoint(team) {
+            if (team === 'Geminiano') {
+                scoreGeminiano++;
+                document.getElementById('scoreGeminiano').innerText = scoreGeminiano;
+            } else if (team === 'Ariano') {
+                scoreAriano++;
+                document.getElementById('scoreAriano').innerText = scoreAriano;
+            }
+        }
+
+        function removePoint(team) {
+            if (team === 'Geminiano') {
+                scoreGeminiano--;
+                document.getElementById('scoreGeminiano').innerText = scoreGeminiano;
+            } else if (team === 'Ariano') {
+                scoreAriano--;
+                document.getElementById('scoreAriano').innerText = scoreAriano;
+            }
+        }
+    </script>
+</body>
+</html>
