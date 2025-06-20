@@ -15,7 +15,77 @@
             font-size: 32px;
             margin-bottom: 40px;
         }
+        .teams-container {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
         .team {
-            display: inline-block;
-            width: 300px;
-            margin: 20px;
+            width: 250px;
+            padding: 20px;
+            border: 3px solid black;
+            border-radius: 10px;
+            background-color: white;
+            color: black;
+        }
+        .score {
+            font-size: 48px;
+            margin: 20px 0;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: black;
+            color: yellow;
+            border: none;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+        button:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>REVANCHE DO GEMINIANO</h1>
+
+    <div class="teams-container">
+        <div class="team">
+            <h2>Time Geminiano ♊</h2>
+            <div class="score" id="scoreGeminiano">0</div>
+            <button onclick="addPoint('Geminiano')">+1 ponto</button>
+            <button onclick="removePoint('Geminiano')">-1 ponto</button>
+        </div>
+
+        <div class="team">
+            <h2>Time Ariana ♈</h2>
+            <div class="score" id="scoreAriana">0</div>
+            <button onclick="addPoint('Ariana')">+1 ponto</button>
+            <button onclick="removePoint('Ariana')">-1 ponto</button>
+        </div>
+    </div>
+
+    <script>
+        let scoreGeminiano = 0;
+        let scoreAriana = 0;
+
+        function addPoint(team) {
+            if (team === 'Geminiano') {
+                scoreGeminiano++;
+                document.getElementById('scoreGeminiano').innerText = scoreGeminiano;
+            } else if (team === 'Ariana') {
+                scoreAriana++;
+                document.getElementById('scoreAriana').innerText = scoreAriana;
+            }
+        }
+
+        function removePoint(team) {
+            if (team === 'Geminiano') {
+                scoreGeminiano--;
+                document.getElementById('scoreGeminiano').innerText = scoreGeminiano;
+            } else if (team === 'Ariana') {
+                scoreAriana--;
+                d
